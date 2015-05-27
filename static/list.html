@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>List example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="jquery.rest.min.js"></script>
+	<script>
+		var client = new $.RestClient('/api/');
+		client.add('profile');
+		client.add('usecase');
+
+		client.usecase.read()
+		.done(function (data, textStatus, xhrObject){
+			console.log(data);
+			$.each(data, function(r, d) {
+				$('#thelist').append("<li>" + d.title + "</li>");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>List</h1>
+	
+	<ul id="thelist">
+	</ul>
+	
+</body>
+</html>
