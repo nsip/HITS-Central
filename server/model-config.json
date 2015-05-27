@@ -33,5 +33,9 @@
   "usecase": {
     "dataSource": "db",
     "public": true
+  },
+  "info": {
+    "dataSource": "db",
+    "public": true
   }
 }
